@@ -45,7 +45,7 @@ class Sort:
         while left<=right:
             if arr[mid] == target:
                 return mid
-            if target>arr[mid]:
+            elif target>arr[mid]:
                 left = mid+1
 
             else:
