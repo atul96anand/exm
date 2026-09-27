@@ -27,7 +27,7 @@ class Sort:
         return merged
 
     def merge(self,arr:list):
-        if len(arr)>=1:
+        if len(arr)<=1:
             return arr
         mid = len(arr)//2
 
@@ -36,16 +36,19 @@ class Sort:
 
         return self.mrg(left,right)
 
-    def bin(self,target,arr):
+    def bin(self,target):
         left = 0
-        right = len(arr) - 1
+        right = self.size - 1
 
-        mid = (left+right)//2
+        
 
         while left<=right:
-            if arr[mid] == target:
+
+            mid = (left+right)//2
+
+            if self.arr[mid] == target:
                 return mid
-            elif target>arr[mid]:
+            elif target>self.arr[mid]:
                 left = mid+1
 
             else:
@@ -55,6 +58,7 @@ class Sort:
 
 s = Sort([8,9,1,5,6,2])
 print(s.merge(s.arr))
+print(s.bin(5))
 
 
 
